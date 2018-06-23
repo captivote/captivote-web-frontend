@@ -1,7 +1,14 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
+  <h1 class="mat-h1">Vote on images, compete with friends</h1>
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <button fxFlex="45%" mat-raised-button color="primary" routerLink="room/create">Create room</button>
+    <button fxFlex="45%" mat-raised-button color="accent" routerLink="arsenal/create">Create game/survey</button>
+  </div>
+
+
   <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile *ngFor="let card of cards; index as idx" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
@@ -16,7 +23,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div style="color: dodgerblue"><h1>&hellip;</h1></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

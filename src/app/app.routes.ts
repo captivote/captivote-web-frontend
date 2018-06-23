@@ -14,7 +14,12 @@ export const appRoutes: Routes = [
   {
     path: 'secret-dashboard', loadChildren: './secret-dashboard/secret-dashboard.module#SecretDashboardModule',
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'room', loadChildren: './room/room.module#RoomModule',
+    canActivate: [AuthGuard]
+  },
+  { path: 'arsenal', loadChildren: './question-arsenal/question-arsenal.module#QuestionArsenalModule' }
 ];
 
 export const getRedirectUrl = (url: string): string | null => ((question: number): string | null => {
