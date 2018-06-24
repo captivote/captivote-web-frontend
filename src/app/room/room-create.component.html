@@ -1,12 +1,11 @@
-<form fxLayout="column" (ngSubmit)="createRoom()">
+<form fxLayout="column" (ngSubmit)="createRoom()" [formGroup]="roomCreateForm">
   <mat-form-field>
-    <input matInput placeholder="Name">
+    <input class="form-control" matInput placeholder="Name" formControlName="name">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Capacity" type="number">
+    <input class="form-control" matInput placeholder="Capacity" type="number" formControlName="user_limit">
   </mat-form-field>
-
 
   <button mat-raised-button color="primary" type="submit">Create</button>
 </form>

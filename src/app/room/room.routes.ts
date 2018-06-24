@@ -5,6 +5,6 @@ import { RoomCreateComponent } from './room-create.component';
 
 
 export const roomRoutes: Routes = [
-  { path: '', component: RoomComponent },
-  { path: 'create', component: RoomCreateComponent }
+  { path: 'create', component: RoomCreateComponent },
+  { path: ':name_owner', component: RoomComponent }
 ];
