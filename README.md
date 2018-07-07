@@ -1,11 +1,11 @@
 captivote-web-frontend
-====================
+======================
 
 Captivote [Angular] web frontend.
 
 ## Update version
 
-    sed -i "/this.serverStatus =/c\    this.serverStatus = {version: 'App $(jq -r .version package.json); '};" src/app/server-status/server-status.component.ts
+    sed -i "/this.serverStatus =/c\    this.serverStatus = { version: '@ $(jq -r .version package.json); '};" src/app/server-status/server-status.component.ts
 
 ## Deploy distribution
 Clone [captivote-web-frontend-dist](https://github.com/SamuelMarks/captivote-web-frontend-dist) one directory above, then:

@@ -13,6 +13,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptors';
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
+import { RoomService } from '../api/room/room.service';
 
 
 @NgModule({
@@ -30,11 +31,15 @@ import { AppComponent } from './app.component';
     AlertsModule.forRoot(),
     SidenavModule
   ],
-  providers: [AuthGuard, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true,
-  }],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    RoomService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

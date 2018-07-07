@@ -5,7 +5,7 @@ import { AuthGuard } from './auth/auth.guard';
 
 
 export const appRoutes: Routes = [
-  { path: '', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+  { path: '', loadChildren: './root/root.module#RootModule' },
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
   {
     path: 'admin', loadChildren: './admin/admin.module#AdminModule',

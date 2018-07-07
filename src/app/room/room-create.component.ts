@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { RoomService } from '../../api/room/room.service';
-import { Router } from '@angular/router';
-import { IRoom } from '../../api/room/room.interfaces';
 
 @Component({
   selector: 'app-room-create',

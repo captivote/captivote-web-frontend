@@ -16,14 +16,9 @@ export class RoomComponent implements OnInit {
               private roomService: RoomService) { }
 
   ngOnInit() {
-    const route = this.route.snapshot.paramMap.get('name_owner');
+    const name_owner = this.route.snapshot.paramMap.get('name_owner');
+    const [name, owner] = name_owner.split('_');
 
-    if (this.roomService.rooms.has(route)) {
-      this.room = this.roomService.rooms.get(route);
-      return;
-    }
-
-    const [name, owner] = route.split('_');
     this.roomService
       .read({ name, owner })
       .subscribe(room => this.room = room);

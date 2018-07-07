@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { parseDates } from '../shared';
@@ -22,9 +22,11 @@ export class RoomService {
   }
 
   read(room: IRoom): Observable<IRoom> {
-    return this.http
-      .get<IRoom>(`/api/room/${room.name}_${room.owner}`)
-      .pipe(map(parseDates));
+    return (
+      this.rooms.has(`${room.name}_${room.owner}`) ?
+        of(this.rooms.get(`${room.name}_${room.owner}`))
+        : this.http.get<IRoom>(`/api/room/${room.name}_${room.owner}`)
+    ).pipe(map(parseDates));
   }
 
   /*
@@ -42,7 +44,13 @@ export class RoomService {
 
   getAll(): Observable<IRoom[]> {
     return this.http
-      .get<{ rooms: IRoom[] }>('/api/rooms')
-      .pipe(map(rooms => rooms.rooms));
+      .get<{rooms: IRoom[]}>('/api/rooms')
+      .pipe(
+        map(rooms => rooms.rooms),
+        map(rooms =>
+          rooms.forEach((room: IRoom) =>
+            this.rooms.set(`${room.name}_${room.owner}`, room)) || rooms
+        )
+      );
   }
 }
