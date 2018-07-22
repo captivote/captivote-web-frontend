@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { RoomService } from '../../api/room/room.service';
   templateUrl: './room-create.component.html',
   styleUrls: ['./room-create.component.css']
 })
-export class RoomCreateComponent implements OnInit {
+export class RoomCreateComponent {
   roomCreateForm: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -19,9 +19,6 @@ export class RoomCreateComponent implements OnInit {
       name: ['', Validators.required],
       user_limit: ''
     });
-  }
-
-  ngOnInit() {
   }
 
   createRoom() {

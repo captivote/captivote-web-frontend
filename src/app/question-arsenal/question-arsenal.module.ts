@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialImportModule } from '../material-import/material-import.module';
 
@@ -13,7 +13,7 @@ import { QuestionArsenalCreateComponent } from './question-arsenal-create.compon
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule, RouterModule.forChild(questionArsenalRoutes), FormsModule,
+    CommonModule, RouterModule, RouterModule.forChild(questionArsenalRoutes), FormsModule, ReactiveFormsModule,
     FlexLayoutModule, MaterialImportModule
   ],
   declarations: [QuestionArsenalComponent, QuestionArsenalCreateComponent]

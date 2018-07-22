@@ -1,22 +1,24 @@
-<form fxLayout="column" (ngSubmit)="createQuestionArsenal()">
+<form fxLayout="column" (ngSubmit)="createQuestionArsenal()" [formGroup]="arsenalCreateForm">
   <mat-form-field>
-    <input matInput placeholder="arsenal_id">
+    <input matInput placeholder="Name" formControlName="name">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="room_id">
+    <input type="text" placeholder="Choose room (can leave blank)" aria-label="Number" matInput
+           formControlName="room_id" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let room of rooms" [value]="room.name + ':' + room.owner">
+        {{room.name}} of {{room.owner}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="question_id">
+    <input matInput placeholder="content" formControlName="content">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="content">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="timer" type="number">
+    <input matInput placeholder="Time limit (in seconds)" formControlName="timer" type="number">
   </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit">Create</button>

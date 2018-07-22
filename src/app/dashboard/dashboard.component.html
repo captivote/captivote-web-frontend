@@ -1,7 +1,7 @@
 <div class="grid-container">
   <h1 class="mat-h1">{{title}}</h1>
 
-  <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <div fxLayoutAlign="space-around center" fxLayout="row wrap" fxLayout.xs="column">
     <button *ngIf="homepage" fxFlex="45%" mat-raised-button color="primary" routerLink="room/create">Create room
     </button>
     <button fxFlex="45%" mat-raised-button color="accent" routerLink="arsenal/create">Create game/survey</button>
@@ -13,13 +13,6 @@
         <mat-card-header>
           <mat-card-title>
             Running games
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
 
           <mat-card-content class="dashboard-card-content">
@@ -34,13 +27,6 @@
         <mat-card-header>
           <mat-card-title>
             Recent activity
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
 
           <mat-card-content class="dashboard-card-content">
@@ -55,13 +41,6 @@
         <mat-card-header>
           <mat-card-title>
             High scores
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
 
           <mat-card-content class="dashboard-card-content">
@@ -76,13 +55,6 @@
         <mat-card-header>
           <mat-card-title>
             Rooms
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
 
           <mat-card-content class="dashboard-card-content">
