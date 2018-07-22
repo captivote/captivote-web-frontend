@@ -1,6 +1,6 @@
 {
   "name": "captivote-web-frontend",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Captivote [Angular] web frontend",
   "scripts": {
     "ng": "ng",
@@ -24,7 +24,10 @@
     "@angular/platform-browser": "^6.0.9",
     "@angular/platform-browser-dynamic": "^6.0.9",
     "@angular/router": "^6.0.9",
+    "@sgbj/angular-prism": "^0.2.1",
     "core-js": "^2.5.7",
+    "ngx-monaco-editor": "^6.0.0",
+    "prismjs": "^1.15.0",
     "rxjs": "^6.2.2",
     "zone.js": "^0.8.26"
   },

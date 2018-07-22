@@ -1,0 +1,10 @@
+<mat-dialog-content style="height: 100%">
+  <ngx-monaco-editor [options]="{theme: 'vs-dark', language: 'json', automaticLayout: true}"
+                     [(ngModel)]="value"></ngx-monaco-editor>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="onNoClick()">Save</button>
+</mat-dialog-actions>
+
+<pre></pre>
